@@ -1,0 +1,17 @@
+{
+  "name": "movienator001",
+  "displayName": "movienator001",
+  "expo": {
+    "name": "movienator001",
+    "slug": "movienator001",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
