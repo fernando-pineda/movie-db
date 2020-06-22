@@ -15,7 +15,7 @@ const DefaultHeader = () => {
             fontSize: 25,
             width: screenWidth,
             paddingTop: 25
-        }}> MOVIENATOR </Text>
+        }}> MOVIENATOR</Text>
 
     )
 }

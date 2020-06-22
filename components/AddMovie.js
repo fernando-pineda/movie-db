@@ -21,10 +21,10 @@ const AddMovie = ({ item, showAddMovieModal, showWatchTrailerModal }) => {
 
     return (
         <View>
-            <Button title="ADD TO YOUR LIBRARY" icon={<Icon name="plus-square" size={15} color="white" />} onPress={() => { handleOpenAddMovieModal(item) }} />
+            <Button title="ADD TO YOUR LIBRARY" icon={< Icon name="plus-square" size={15} color="white" />} onPress={() => { handleOpenAddMovieModal(item) }} />
 
-            <Button title="WATCH TRAILERS" onPress={() => { handleShowWatchTrailerModal(item) }} />
-        </View>
+            < Button title="WATCH TRAILERS" onPress={() => { handleShowWatchTrailerModal(item) }} />
+        </View >
     )
 
 }
