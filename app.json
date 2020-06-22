@@ -1,17 +1,16 @@
 {
-  "name": "movienator001",
-  "displayName": "movienator001",
   "expo": {
-    "name": "movienator001",
-    "slug": "movienator001",
+    "name": "Movienator",
+    "icon": "./assets/icon.png",
     "version": "1.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "slug": "MovienatorFirstRelease",
+    "ios": {
+      "bundleIdentifier": "com.fernandopineda.movienator",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.movienator.firstbuild",
+      "versionCode": 1
+    }
   }
 }

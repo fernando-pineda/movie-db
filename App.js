@@ -1,36 +1,56 @@
-import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import ExploreMoviesScreen from './screens/ExploreMoviesScreen';
+import MyMoviesScreen from './screens/MyMoviesScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import FlashMessage from 'react-native-flash-message';
+import DefaultHeader from './components/header';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
-  );
+const Tab = createMaterialTopTabNavigator();
+
+class App extends Component {
+
+
+  render() {
+
+    return (
+      <>
+
+        <DefaultHeader />
+        <NavigationContainer >
+          <Tab.Navigator
+            tabBarPosition={"bottom"}
+            initialRouteName="Explore"
+            tabBarOptions={{
+              activeTintColor: 'white',
+              showLabel: false,
+              labelStyle: { fontSize: 30, fontWeight: "bold" },
+              style: { backgroundColor: 'black' },
+              showIcon: true,
+            }}
+          >
+            <Tab.Screen name="Explore" component={ExploreMoviesScreen} options={{
+              tabBarIcon: () => (
+                //Your icon component for example => 
+                <Icon name="movie-filter" size={30} color="white" />
+              )
+            }}
+            />
+            <Tab.Screen name="My Movies" component={MyMoviesScreen} default options={{
+              tabBarIcon: () => (
+                //Your icon component for example => 
+                <Icon name="local-movies" size={30} color="white" />
+              )
+            }} />
+          </Tab.Navigator>
+        </NavigationContainer >
+        <FlashMessage position="top" />
+      </>
+    );
+  }
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default App;
